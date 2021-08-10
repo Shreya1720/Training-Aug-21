@@ -1,0 +1,3 @@
+
+
+INSERT INTO JobHistory VALUES ('2020-10-08',CONVERT(date, '13-02-2014', 105),5,5)
