@@ -13,10 +13,9 @@ FROM Employees
 
 
 ---3 QUE 
-SELECT  EmployeeID, FirstName, LastName,HireDate from Employees
-    where
-    HireDate like '____-__-07'
-    or HireDate like '____-07-__'
+
+SELECT EmployeeID, FirstName,LastName,HireDate FROM Employees
+WHERE DATEPART(DAY,HireDate) LIKE 7 OR DATENAME(MONTH,HireDate) LIKE 'july'
 
 
 ---4 QUE 
@@ -37,7 +36,6 @@ SELECT REPLACE(PhoneNumber,124,999) as Phonenumber from Employees
 set datefirst 1
 SELECT  HireDate , DATENAME(WEEKDAY,HireDate) AS daynames FROM Employees 
 WHERE DATEPART(WEEKDAY,HireDate) LIKE 1 
-
 
 
 ---9 QUE
