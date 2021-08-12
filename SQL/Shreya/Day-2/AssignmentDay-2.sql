@@ -23,6 +23,7 @@ UPDATE Employees SET Email='not availableQue4' , CommissionPct =0.100 WHERE Depa
 UPDATE Employees SET email='not availableQue5' WHERE DepartmentID=(SELECT DepartmentID 
 FROM Departments WHERE DepartmentName='Accounting');
 
+
 SELECT * FROM Employees
 --6 QUE
 
@@ -38,6 +39,15 @@ AND DepartmentID=30 AND JobId NOT LIKE 'SH%'
 
 --8 QUE
 
+UPDATE Employees SET Salary =(CASE
+DepartmentID WHEN 40 THEN Salary+(Salary*0.25) 
+WHEN 90 THEN Salary+(Salary*0.15)
+WHEN 110 THEN Salary+(Salary*0.10)
+ELSE Salary END)
+WHERE DepartmentID=40 OR DepartmentID=90 OR DepartmentID=110
+
+
+----------
 UPDATE Employees SET Salary += Salary*0.25 where DepartmentID = 40 
 UPDATE Employees SET Salary += Salary*0.15 where DepartmentID = 90
 UPDATE Employees SET Salary += Salary*0.10 where DepartmentID = 110 
