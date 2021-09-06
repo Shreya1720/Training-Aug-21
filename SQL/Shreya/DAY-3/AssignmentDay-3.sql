@@ -1,10 +1,12 @@
---- 1 QUE
+/* 1 QUE Write a query that displays the FirstName and the length of the FirstName for all employees whose name starts with the letters ‘A’, ‘J’ or ‘M’. 
+Give each column an appropriate label. Sort the results by the employees’ FirstName*/
+
 
 SELECT FirstName , LEN(FirstName) as LengthOfFirstName from Employees WHERE FirstName 
 LIKE ('A%') OR FirstName LIKE ('J%') OR FirstName LIKE ('M%') ORDER BY FirstName ASC
 
 
---- 2 QUE
+--- 2 QUE Write a query to display the FirstName and Salary for all employees. Format the salary to be 10 characters long, left-padded with the $ symbol. Label the column SALARY.
 SELECT CAST(LEFT(Salary,10) AS varchar(10)) FROM Employees
 
 SELECT FirstName,
@@ -12,38 +14,42 @@ SALARY = REPLICATE('$',10-Len(Salary))+ CAST(LEFT(Salary,13) AS varchar(10))
 FROM Employees
 
 
----3 QUE 
+---3 QUE Write a query to display the employees with their code, first name, last name and hire date who hired either on seventh day of any month or seventh month in any year.
 
 SELECT EmployeeID, FirstName,LastName,HireDate FROM Employees
 WHERE DATEPART(DAY,HireDate) LIKE 7 OR DATENAME(MONTH,HireDate) LIKE 'july'
 
 
----4 QUE 
+---4 QUE Write a query to display the length of first name for employees where last name contains character ‘c’ after 2nd position.
 SELECT * FROM Employees
 SELECT FirstName , LEN(FirstName) as LengthOfFirstName from Employees WHERE LastName LIKE
 ('__C%')
 
----5 QUE
+---5 QUE Write a query to extract the last 4 character of PhoneNumber.
 
 SELECT right(PhoneNumber,4) as phonenumber from Employees
 
----6 QUE 
+---6 QUE Write a query to update the portion of the PhoneNumber in the employees table, within the phone number the substring ‘124’ will be replaced by ‘999’.
+
+
 
 SELECT REPLACE(PhoneNumber,124,999) as Phonenumber from Employees
 
----8 QUE
+---8 QUE Write a query to get the distinct Mondays from HireDate in employees tables.
 
 set datefirst 1
 SELECT  HireDate , DATENAME(WEEKDAY,HireDate) AS daynames FROM Employees 
 WHERE DATEPART(WEEKDAY,HireDate) LIKE 1 
 
 
----9 QUE
+---9 QUE  Write a query to get the FirstName and HireDate from Employees table where HireDate between ‘1987-06-01’ and ‘1987-07-30’
 
+ 
 SELECT FirstName , HireDate FROM Employees WHERE CAST(HireDate AS varchar) 
 BETWEEN '1987-06-01' AND '1987-07-30' 
 
----10 QUE 
+---10 QUE  Write a query to display the current date in the following format.
+      --Sample output : 12:00 AM Sep 5, 2014
 
 SELECT RIGHT(CONVERT(VARCHAR(20), GETDATE(),100),7) +' '+
 SUBSTRING(DATENAME(MONTH, GETDATE()), 1, 3)+' '+ 
@@ -54,7 +60,8 @@ SUBSTRING(DATENAME(MONTH, GETDATE()), 1, 3)+' '+
 DATENAME(DAY, GETDATE()) + ', '+ DATENAME(YEAR, GETDATE()) date
 
 
---12 QUE
+--12 QUE Write a query to get the FirstName, LastName who joined in the month of June.
+
 
 SELECT FirstName , LastName FROM Employees WHERE MONTH(HireDate)=6;
 
@@ -63,7 +70,7 @@ SELECT FirstName , LastName FROM Employees WHERE DATENAME(MONTH,HireDate) LIKE '
 
 
 
----13 QUE
+---13 QUE Write a query to get first name, hire date and experience of the employees.
 
 SELECT FirstName ,HireDate ,(Year(GETDATE()) - Year(HireDate)) as Experience from Employees
 --2ND WAY
@@ -75,7 +82,7 @@ SELECT FirstName , HireDate , DATEDIFF(YEAR,HireDate,GETDATE()) as Experience
 FROM Employees
 
 
----14 QUE
+---14 QUE Write a query to get first name of employees who joined in 1987.
 SELECT FirstName  FROM Employees WHERE YEAR(HireDate)=1987;
 
 
