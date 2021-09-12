@@ -104,32 +104,24 @@ AMOUNT MONEY '$.AMOUNT'
  
 --json variable
 DECLARE @jsonvar NVARCHAR(MAX)
-SET @jsonvar = N'{​​​​​
-"CustomerName": "Shreya",
-"CITY" :"Ahmedabad",
-"ACTNO" : 120,
-"BRANCH": "CSE",
-"AMOUNT": 10000
-}​​​​​'
+SET @jsonvar = N'{
+          "CustomerName": "Shreya Thakkar",
+          "CITY" :"Ahmedabad",
+          "ACTNO" : 140,
+          "BRANCH": "CSE",
+          "AMOUNT": 20000
+        }'
+EXEC sp_Q6 @json_inp=@jsonvar
 
-
+SELECT * FROM Depo
+--check json variable
+ 
 IF ISJSON(@jsonvar)>0
 PRINT(1)
 ELSE
 PRINT(0)
 
-EXEC sp_Q6 @json_inp=@jsonvar
 
-
-
-
- 
---check json variable
- 
- 
-
- 
 SELECT * FROM Depo
-
 
 
