@@ -57,7 +57,14 @@ END
 
 EXEC ProQ4 'Nagpur'
 
+
 --Q5: Count the Number of Customers Living in the City where Branch is Located
+CREATE PROCEDURE Proc5 @CITY varchar(20)
+AS
+SELECT COUNT(*) FROM CUSTOMER
+WHERE CITY IN (SELECT CITY FROM BRANCH WHERE CITY=@CITY)
+
+EXEC Proc5 'mumbai'
 
 
 
