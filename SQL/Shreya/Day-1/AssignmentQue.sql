@@ -35,7 +35,7 @@ INSERT INTO Inventory VALUES ('Atta noodles',30)
 INSERT INTO sales VALUES (5,5,10)
 INSERT INTO sales VALUES (1,5,20)
 INSERT INTO sales VALUES (2,6,30)
-SELECT * FROM Comission
+SELECT * FROM Comissio
 SELECT * FROM B_Employee
 SELECT * FROM Inventory
 SELECT * FROM sales
