@@ -16,7 +16,6 @@ FROM Employees
 SELECT EmployeeID, FirstName,LastName,HireDate FROM Employees
 WHERE DATEPART(DAY,HireDate) LIKE 7 OR DATENAME(MONTH,HireDate) LIKE 'july'
 
-
 ---4 QUE Write a query to display the length of first name for employees where last name contains character ‘c’ after 2nd position.
 SELECT * FROM Employees
 SELECT FirstName , LEN(FirstName) as LengthOfFirstName from Employees WHERE LastName LIKE
