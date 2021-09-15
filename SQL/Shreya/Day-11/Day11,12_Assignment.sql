@@ -67,8 +67,6 @@ WHERE CITY IN (SELECT CITY FROM BRANCH WHERE CITY=@CITY)
 EXEC Proc5 'mumbai'
 
 
-
-
 /*Q6Create a Procedure which will accept input in JSON parameter CustomerName,City, ACTNO,Branch,amount
 And insert these record in the Deposit table. Before inserting some validation should be done like amount should
 be greater than 10Rs. and date should always be current date.*/
