@@ -45,7 +45,6 @@ GROUP BY DepartmentID ORDER BY maxsalary
  
 --- BY FETCHING DEPARTMENT NAME FROM DEPARTMENT TABLE
 
-
 SELECT Departments.DepartmentName,MAX(Employees.Salary) as maxsalary 
 FROM Departments, Employees 
 WHERE Departments.DepartmentID = Employees.DepartmentID
@@ -58,7 +57,6 @@ GROUP BY Departments.DepartmentName order by maxsalary
 SELECT DepartmentID , MIN(Salary) as minsalary
 FROM Employees
 GROUP BY DepartmentID ORDER BY minsalary
-
 
 --- BY FETCHING DEPARTMENT NAME FROM DEPARTMENT TABLE
 
@@ -76,7 +74,6 @@ FROM Employees
 GROUP BY DepartmentID 
 HAVING SUM(Salary) >= 50000
 ORDER BY TOTALSALARY DESC
-
 
 ---BY FETCHING DEPARTMENT NAME FROM DEPARTMENT TABLE
 
