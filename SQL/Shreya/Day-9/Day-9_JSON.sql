@@ -1,9 +1,8 @@
---1.Create a batch Select Banking as ‘Bank Dept’, Insurance as ‘Insurance Dept’ and Services as ‘Services Dept’ from employee table
+--1.Create a batch Select Banking as ï¿½Bank Deptï¿½, Insurance as ï¿½Insurance Deptï¿½ and Services as ï¿½Services Deptï¿½ from employee table
 
 Select Banking as 'Bank Dept',Insurance as 'Insurance Dept',Services as 'Services Dept' 
 FROM Employee
 GO
-
 --2.5 Students Name, Address, City, DOB, Standard need to be inserted in the student table, need to fetch these result from json variable and select output in the json format
 
 CREATE TABLE STUDENT 
