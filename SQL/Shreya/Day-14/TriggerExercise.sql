@@ -8,7 +8,6 @@ StudentName VARCHAR(30),
 TotalFees MONEY,
 RemainingAmt MONEY)
 
-
 INSERT INTO Student VALUES (1,'Shreya',8000,2000),(2,'Diya',7000,1000),(3,'Dharal',8000,1000)
 
 CREATE TABLE Course
