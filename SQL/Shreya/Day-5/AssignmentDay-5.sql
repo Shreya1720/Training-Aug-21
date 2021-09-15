@@ -30,7 +30,6 @@ JOINING_DATEE=CONVERT(VARCHAR(20),JOINING_DATE,113),DEPARTMENT,MANAGER_ID
 FROM Employee
 
 
-
 CREATE TABLE Incentive
 (
 EMPLOYEE_REF_ID INT CONSTRAINT emp_fk REFERENCES Employee(EMPLOYEE_ID) ON UPDATE CASCADE,
@@ -59,7 +58,7 @@ ON e.EMPLOYEE_ID=i.EMPLOYEE_REF_ID
  WHERE (i.INCENTIVE_AMOUNT) > 3000 
 
  --Select first_name, incentive amount from employee and incentives table for all employees 
- --even if they didn’t get incentives.
+ --even if they didnï¿½t get incentives.
 
 SELECT e.FIRST_NAME,i.INCENTIVE_AMOUNT 
 FROM Employee AS e LEFT JOIN Incentive AS i
@@ -75,7 +74,7 @@ ON e.MANAGER_ID = m.EMPLOYEE_ID
 
 
 --Select first_name, incentive amount from employee and incentives table for all employees even if they
---didn’t get incentives and set incentive amount as 0 for those employees who didn’t get incentives.
+--didnï¿½t get incentives and set incentive amount as 0 for those employees who didnï¿½t get incentives.
 
 SELECT e.FIRST_NAME,ISNULL(i.INCENTIVE_AMOUNT,0)
 FROM Employee AS e LEFT JOIN Incentive AS i
