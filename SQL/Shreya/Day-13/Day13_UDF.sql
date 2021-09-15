@@ -76,8 +76,6 @@ RETURN
 
 END
 
-
-
 SELECT * FROM GetJobDetails('AD_VP')
 
 
