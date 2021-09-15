@@ -19,7 +19,6 @@ from Employees) tmp WHERE drank=4
  )
 SELECT  salary FROM cte
 
-
 --3 Get department, total salary with respect to a department from employee table.
 WITH Total_salary(DeptId,Salary)
 AS
