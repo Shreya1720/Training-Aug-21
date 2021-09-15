@@ -32,8 +32,6 @@ CLOSE update_salary
 DEALLOCATE update_salary
 
 
-SELECT * FROM Employees
-
 
 
 
