@@ -1,10 +1,8 @@
 /* 1 QUE Write a query that displays the FirstName and the length of the FirstName for all employees whose name starts with the letters ‘A’, ‘J’ or ‘M’. 
 Give each column an appropriate label. Sort the results by the employees’ FirstName*/
 
-
 SELECT FirstName , LEN(FirstName) as LengthOfFirstName from Employees WHERE FirstName 
 LIKE ('A%') OR FirstName LIKE ('J%') OR FirstName LIKE ('M%') ORDER BY FirstName ASC
-
 
 --- 2 QUE Write a query to display the FirstName and Salary for all employees. Format the salary to be 10 characters long, left-padded with the $ symbol. Label the column SALARY.
 SELECT CAST(LEFT(Salary,10) AS varchar(10)) FROM Employees
@@ -12,7 +10,6 @@ SELECT CAST(LEFT(Salary,10) AS varchar(10)) FROM Employees
 SELECT FirstName,
 SALARY = REPLICATE('$',10-Len(Salary))+ CAST(LEFT(Salary,13) AS varchar(10))
 FROM Employees
-
 
 ---3 QUE Write a query to display the employees with their code, first name, last name and hire date who hired either on seventh day of any month or seventh month in any year.
 
