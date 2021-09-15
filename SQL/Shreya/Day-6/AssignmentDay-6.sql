@@ -5,6 +5,7 @@ SELECT * FROM Incentive
 SELECT * FROM Employee WHERE EMPLOYEE_ID IN(
 SELECT EMPLOYEE_REF_ID  FROM Incentive)
 
+
 --Find Salary of the employee whose salary is more than Roy Salary
 
 SELECT FIRST_NAME+' '+LAST_NAME 'name', Salary FROM Employee WHERE Salary > ALL
