@@ -2,9 +2,7 @@
 select * from Employees
 ALTER TABLE Employees DROP CONSTRAINT ukEmail
 UPDATE Employees SET Email='not available'
-
 ---2 QUE Write a SQL statement to change the Email and CommissionPct column of employees table with ‘not available’ and 0.10 for all employees.
-
 select * from Employees
 UPDATE Employees SET Email='not available' , CommissionPct =0.10
 
@@ -31,7 +29,6 @@ SELECT * FROM Employees
 
 UPDATE Employees SET Salary=8000 where EmployeeID=105 AND Salary<5000
 
- 
 /*7 QUE Write a SQL statement to change job ID of employee which ID is 118, to SH_CLERK if the employee belongs to department, 
 which ID is 30 and the existing job ID does not start with SH.*/
 
