@@ -5,8 +5,10 @@ MinSalary INT DEFAULT 8000,
 MaxSalary INT DEFAULT NULL
 )
 
-SELECT * FROM Jobs
+
 
 INSERT INTO Jobs (JobId) VALUES (6)
+
+
 
 
