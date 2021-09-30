@@ -17,6 +17,7 @@ console.log('Tofixed example Result is '+ y.toFixed(2))
 var num=1.567;
 console.log( 'To precision example Result is '+ num.toPrecision(1))
 
+
 //valueof method return number as a number
 var num1=6755;
 console.log(num1.valueOf());

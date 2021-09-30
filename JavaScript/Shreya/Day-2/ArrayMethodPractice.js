@@ -1,6 +1,7 @@
 var names=["Shreya","diya","dharal","riya"];
 console.log(names[1]);
 
+
 //convert array to string
 console.log(names.toString());
 
