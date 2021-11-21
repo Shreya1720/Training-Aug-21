@@ -112,10 +112,8 @@ namespace Day_10
                             break;
                     }
                 }
-              
                 Console.ReadLine();
             }
         }
     }
 }
-
