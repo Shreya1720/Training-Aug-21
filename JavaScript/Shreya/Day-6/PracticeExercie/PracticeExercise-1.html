@@ -9,33 +9,26 @@
 </head>
 
 <body onload="displayData()">
-    <button>
-        Fetch Data
-    </button>
-    <table>
-        <thead>
-            <td>Name</td>
-            <td>Price</td>
-            <td>Location</td>
-        </thead>
-        <tbody id="tbody">
-
-        </tbody>
-    </table>
+    
+    <div id="jsondata"></div>
     <script>
-      var string = '{ "products" : [   { "Name": "Cheese", "Price" : 2.50, "Location": "Refrigerated foods"},  { "Name": "Crisps", "Price" : 3, "Location": "the Snack isle"},   { "Name": "Pizza", "Price" : 4, "Location": "Refrigerated foods"},   { "Name": "Chocolate", "Price" : 1.50, "Location": "the Snack isle"},   { "Name": "Self-raising flour", "Price" : 1.50, "Location": "Home baking"},   { "Name": "Ground almonds", "Price" : 3, "Location": "Home baking"} ]}'
-        localStorage.setItem('added-items', string)
-        document.getElementById("res").innerHTML = localStorage.getItem('added-items')
-
-        const obj = JSON.parse(string);
-
-        document.getElementById("res2").innerHTML = obj.product.name + " " + obj.product.price + " " + obj.product.location
-
-        const text = '{"name":"John", "birth":"1986-12-14", "city":"New York"}';
-        const obj2 = JSON.parse(text);
-        obj2.birth = new Date(obj2.birth);
-
-        document.getElementById("res").innerHTML = obj2.name + ", " + obj2.birth;
+      function displayData() {
+            fetch("./data.json")
+            .then((result) =>{
+                return result.json();
+            })
+            .then((showData) => {
+                console.log(showData);
+                var data = JSON.stringify(showData);
+                localStorage.setItem("Product_Detail",data);
+                console.log(data);
+                document.getElementById("jsondata").innerHTML = data;
+            })
+            .catch((err) =>{
+                console.log(err);
+                document.getElementById("jsondata").innerHTML = err;
+            });
+        }
     </script>
 </body>
 
