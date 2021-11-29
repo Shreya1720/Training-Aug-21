@@ -125,8 +125,17 @@ export function GetCustomer() : void {
     })
 }
 
-export function AddReservation( reservationid : number , cusid : number , resid : number ,tableid : number ){
-   
+export function AddReservation( reservationid : number , cusid : number , resid : number ,tableid : number,time : Date,date:Date,guest:number ){
+   for(var i of table){
+        if(i.TableId == tableid){
+            var d = new Date();
+            var timed = d.setHours(d.getHours()-6)
+            if(time.getHours() > timed){
+                    console.log("Not book !!")
+            }
+            reservation.push(new ReservationTable(reservationid,cusid,resid,tableid,date,time,guest))
+        }
+   }
 }
 
 
